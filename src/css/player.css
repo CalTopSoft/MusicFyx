@@ -1,0 +1,330 @@
+/* Music Player */
+.music-player {
+    height: 90px;
+    background: var(--player-bg);
+    backdrop-filter: blur(20px);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px var(--shadow);
+}
+
+.player-song-info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 300px;
+    min-width: 200px;
+}
+
+.song-cover img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.song-details {
+    flex: 1;
+    min-width: 0;
+}
+
+.song-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text-primary);
+}
+
+.song-artist {
+    color: var(--text-secondary);
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.like-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.like-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.like-btn.liked {
+    color: var(--text-accent);
+}
+
+/* Player Controls */
+.player-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.control-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+.control-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.control-btn.active {
+    color: var(--text-accent);
+}
+
+.play-pause {
+    width: 50px;
+    height: 50px;
+    background: white;
+    color: var(--bg-primary);
+    box-shadow: 0 4px 12px var(--shadow);
+    font-size: 18px;
+}
+
+.play-pause:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px var(--shadow-hover);
+}
+
+/* Progress Bar */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.time {
+    font-size: 12px;
+    color: var(--text-secondary);
+    width: 40px;
+    text-align: center;
+}
+
+.progress-container {
+    flex: 1;
+    position: relative;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: var(--text-accent);
+    border-radius: 2px;
+    transition: width 0.1s ease;
+    position: relative;
+}
+
+.progress::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: var(--text-accent);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.progress-container:hover .progress::after {
+    opacity: 1;
+}
+
+.progress-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* Player Extras */
+.player-extras {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 300px;
+    min-width: 200px;
+    justify-content: flex-end;
+}
+
+.extra-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.extra-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+    transform: scale(1.1);
+}
+
+/* Volume Control */
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.volume-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.volume-btn:hover {
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.volume-slider {
+    width: 100px;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    -webkit-appearance: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-accent);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.volume-control:hover .volume-slider::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--text-accent);
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.volume-control:hover .volume-slider::-moz-range-thumb {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .music-player {
+        padding: 0 16px;
+        height: 80px;
+    }
+    
+    .player-song-info,
+    .player-extras {
+        width: auto;
+        min-width: auto;
+    }
+    
+    .player-extras .volume-control {
+        display: none;
+    }
+    
+    .control-buttons {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .music-player {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px 16px;
+        gap: 12px;
+    }
+    
+    .player-song-info {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .player-controls {
+        width: 100%;
+    }
+    
+    .player-extras {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-bgPrimary text-textPrimary dark:bg-gray-900 dark:text-white;
+}
+
+.app-container {
+  @apply flex h-screen;
+}
+
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-bgSecondary rounded;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-textSecondary rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-textPrimary;
+}
+.modal {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+}
+
+.modal-content {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg w-full max-w-md;
+}
+
+.btn-primary {
+  @apply bg-primary text-white px-4 py-2 rounded hover:bg-green-600;
+}
+
+.btn-danger {
+  @apply bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600;
+}
+
+.input {
+  @apply w-full p-2 border rounded dark:bg-gray-700 dark:border-gray-600;
+}
