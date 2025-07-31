@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import App from './App.jsx';
 import './index.css';
 import { AuthProvider } from './context/AuthContext.jsx';
@@ -14,7 +14,7 @@ import './css/player.css'; // Comentar para probar
 import './css/sidebar.css'; // Solo sidebar.css para probar
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
+  <HashRouter>
     <AuthProvider>
       <PlayerProvider>
         <ConfigProvider>
@@ -22,5 +22,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </ConfigProvider>
       </PlayerProvider>
     </AuthProvider>
-  </BrowserRouter>
+  </HashRouter>
 );
